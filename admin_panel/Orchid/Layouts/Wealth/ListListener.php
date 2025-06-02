@@ -5,22 +5,14 @@ namespace Admin\Orchid\Layouts\Wealth;
 use Orchid\Screen\Layout;
 use Orchid\Screen\Layouts\Listener;
 
-class SearchListener extends Listener
+class ListListener extends Listener
 {
     /**
      * List of field names for which values will be listened.
      *
      * @var string[]
      */
-    protected $targets = [
-        'search.keyword',
-        'search.archived',
-        'search.units.',
-        'search.indicators.',
-        'search.conformity',
-        'search.wealth_type',
-        'sort',
-    ];
+    protected $targets = ['search.keyword', 'search.archived', 'search.unit'];
 
     /**
      * What screen method should be called
@@ -39,7 +31,7 @@ class SearchListener extends Listener
     protected function layouts(): iterable
     {
         return [
-            ListLayout::class
+            ListLayout::class,
         ];
     }
 }
